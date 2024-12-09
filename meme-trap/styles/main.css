@@ -47,12 +47,15 @@ body {
     align-items: center;
     gap: 20px;
     padding: 20px;
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .main-button {
     display: block;
+    width: 100%;
     max-width: 300px;
     height: auto;
     cursor: pointer;
@@ -64,11 +67,13 @@ body {
 }
 
 .smart-image {
+    width: 100%;
     max-width: 600px;
     height: auto;
 }
 
 .meme {
+    width: 100%;
     max-width: 90%;
     height: auto;
     margin: 20px 0;
@@ -107,6 +112,10 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     transition: transform 0.3s, background-color 0.3s;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
 }
 
 .go-button:hover {
@@ -122,10 +131,71 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
     animation: shake 0.5s infinite;
+    text-align: center;
 }
 
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
     75% { transform: translateX(5px); }
+}
+
+/* Mobile Optimizations */
+@media screen and (max-width: 768px) {
+    .corner-link {
+        width: 120px;
+        height: 120px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .content-container {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .main-button {
+        max-width: 250px;
+    }
+
+    .go-button {
+        padding: 12px 30px;
+        font-size: 20px;
+    }
+
+    .wrong-button-text {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .corner-link {
+        width: 80px;
+        height: 80px;
+        top: 5px;
+        right: 5px;
+    }
+
+    .circle-button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .content-container {
+        padding: 8px;
+        gap: 10px;
+    }
+
+    .main-button {
+        max-width: 200px;
+    }
+
+    .go-button {
+        padding: 10px 25px;
+        font-size: 18px;
+    }
+
+    .wrong-button-text {
+        font-size: 24px;
+    }
 }
