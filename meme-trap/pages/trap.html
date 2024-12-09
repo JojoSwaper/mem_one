@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's a Trap!</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <img src="../images/Its_a_trap_meme.jpg" alt="It's a Trap!" class="meme" id="trapMeme">
+    <img src="../images/moneky_meme.jpg" alt="Monkey Meme" class="meme fade-out" id="monkeyMeme">
+
+    <script>
+        window.onload = function() {
+            const trapMeme = document.getElementById('trapMeme');
+            const monkeyMeme = document.getElementById('monkeyMeme');
+            
+            setTimeout(() => {
+                // Fade out trap meme
+                trapMeme.classList.add('fade-out');
+                
+                setTimeout(() => {
+                    // Hide trap meme and show monkey meme with fade in
+                    trapMeme.style.display = 'none';
+                    document.body.style.backgroundColor = '#000000';
+                    monkeyMeme.style.display = 'block';
+                    monkeyMeme.classList.remove('fade-out');
+                    monkeyMeme.classList.add('fade-in');
+                    monkeyMeme.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+            }, 600);
+        };
+    </script>
+</body>
+</html>
